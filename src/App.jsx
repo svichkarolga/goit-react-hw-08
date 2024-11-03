@@ -7,6 +7,7 @@ import Layout from "./components/Layout/Layout";
 import { RestrictedRoute } from "./components/RestrictedRoute";
 import { PrivateRoute } from "./components/PrivateRoute";
 import "./App.css";
+import { selectIsLoggedIn } from "./redux/auth/selectors";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const RegistrationPage = lazy(() =>
@@ -18,6 +19,7 @@ const ContactsPage = lazy(() => import("./pages/ContactsPage/ContactsPage"));
 function App() {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectLoading);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   const error = useSelector(selectError);
   useEffect(() => {
     dispatch(fetchContacts());
@@ -46,7 +48,7 @@ function App() {
             }
           />
           <Route
-            path="/tasks"
+            path="/contacts"
             element={
               <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
             }

@@ -1,13 +1,8 @@
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-
-.nav {
-  display: flex;
+.AuthNav {
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 20px;
 }
 
 .link {

@@ -5,13 +5,15 @@ import DocumentTitle from "../../components/DocumentTitle";
 import ContactForm from "../../components/ContactForm/ContactForm";
 import SearchBox from "../../components/SearchBox/SearchBox";
 import ContactList from "../../components/ContactList/ContactList";
+import { selectLoading } from "../../redux/contacts/selectors";
+import { fetchContacts } from "../../redux/contacts/operations";
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectLoading);
 
   useEffect(() => {
-    dispatch(fetchTasks());
+    dispatch(fetchContacts());
   }, [dispatch]);
   return (
     <div>

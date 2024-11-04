@@ -19,8 +19,6 @@ const RegistrationForm = () => {
   });
 
   const handleSubmit = (values, actions) => {
-    // e.preventDefault();
-
     dispatch(register(values));
     actions.resetForm();
   };
@@ -51,6 +49,7 @@ const RegistrationForm = () => {
           name="password"
           component="span"
         />
+
         <div className={styles.btnBox}>
           <button className={styles.btn} type="submit">
             Register

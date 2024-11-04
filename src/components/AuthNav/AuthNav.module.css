@@ -1,8 +1,6 @@
 .AuthNav {
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 15px 20px;
+  margin-right: 50px;
+  display: inline-block;
 }
 
 .link {

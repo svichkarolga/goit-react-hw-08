@@ -1,19 +1,23 @@
 import { useDispatch } from "react-redux";
 import { logIn } from "../../redux/auth/operations";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import styles from "./LoginForm.module.css";
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const form = e.currentTarget;
+  const validationSchema = Yup.object({
+    email: Yup.string()
+      .email("Invalid email format")
+      .required("Email is required"),
+    password: Yup.string()
+      .min(6, "Password must be at least 7 characters")
+      .required("Password is required"),
+  });
 
-    dispatch(
-      logIn({
-        email: form.elements.email.value,
-        password: form.elements.password.value,
-      })
-    )
+  const handleSubmit = (values, actions) => {
+    dispatch(logIn(values))
       .unwrap()
       .then(() => {
         console.log("login success");
@@ -21,21 +25,35 @@ export const LoginForm = () => {
       .catch(() => {
         console.log("login error");
       });
-
-    form.reset();
+    actions.resetForm();
+    console.log(dispatch);
   };
 
   return (
-    <form onSubmit={handleSubmit} autoComplete="off">
-      <label>
-        Email
-        <input type="email" name="email" />
-      </label>
-      <label>
-        Password
-        <input type="password" name="password" />
-      </label>
-      <button type="submit">Log In</button>
-    </form>
+    <Formik
+      initialValues={{ email: "", password: "" }}
+      validationSchema={validationSchema}
+      onSubmit={handleSubmit}
+    >
+      <Form className={styles.form} autoComplete="off">
+        <label className={styles.label}>Email</label>
+        <Field type="email" name="email" />
+        <ErrorMessage className={styles.error} name="email" component="span" />
+
+        <label className={styles.label}> Password</label>
+        <Field type="password" name="password" />
+        <ErrorMessage
+          className={styles.error}
+          name="password"
+          component="span"
+        />
+
+        <div className={styles.btnBox}>
+          <button className={styles.btn} type="submit">
+            Log In
+          </button>
+        </div>
+      </Form>
+    </Formik>
   );
 };

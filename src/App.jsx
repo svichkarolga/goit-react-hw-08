@@ -6,8 +6,9 @@ import { selectLoading, selectError } from "./redux/contacts/selectors";
 import Layout from "./components/Layout/Layout";
 import { RestrictedRoute } from "./components/RestrictedRoute";
 import { PrivateRoute } from "./components/PrivateRoute";
-import "./App.css";
+import { refreshUser } from "./redux/auth/operations";
 import { selectIsLoggedIn } from "./redux/auth/selectors";
+import "./App.css";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const RegistrationPage = lazy(() =>
@@ -21,6 +22,11 @@ function App() {
   const isLoading = useSelector(selectLoading);
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const error = useSelector(selectError);
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);

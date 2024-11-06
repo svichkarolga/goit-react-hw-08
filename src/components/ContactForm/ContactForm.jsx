@@ -10,7 +10,7 @@ const ContactForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
-    event.preventDefault();
+    // event.preventDefault();
     const newContact = {
       name: values.name,
       number: values.number,

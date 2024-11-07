@@ -2,23 +2,26 @@ import React from "react";
 import styles from "./Contact.module.css";
 import { FaPhone } from "react-icons/fa6";
 import { RiContactsFill } from "react-icons/ri";
-import { Button } from "@mui/material";
 import Modal from "../Modal/Modal";
 import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 const Contact = ({ data: { id, name, number }, onDelete }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleDeleteClick = () => {
-    setIsModalOpen(true); // Відкриваємо модальне вікно
+    setIsModalOpen(true);
   };
 
   const handleConfirmDelete = () => {
-    onDelete(id); // Видаляємо контакт
+    onDelete(id);
+    toast.success("Successfully deleted!");
+    setIsModalOpen(false);
   };
 
   return (
     <div className={styles.container}>
+      <Toaster position="top-center" reverseOrder={false} />
       <p className={styles.text}>
         <RiContactsFill className={styles.icon} />
         {name}

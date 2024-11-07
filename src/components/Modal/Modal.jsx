@@ -30,24 +30,22 @@ const StyledDialogActions = styled(DialogActions)({
   color: "#333",
 });
 const StyledDeleteButton = styled(Button)({
-  backgroundColor: "#d32f2f", // Червоний колір для кнопки видалення
-  color: "#fff", // Білий текст
+  backgroundColor: "#d32f2f",
+  color: "#fff",
   "&:hover": {
-    // Стиль при наведенні
     backgroundColor: "#c62828",
   },
-  padding: "8px 16px", // Внутрішні відступи
+  padding: "8px 16px",
   fontWeight: "bold",
 });
 const StyledCancelButton = styled(Button)({
-  borderColor: "#1976d2", // Синій колір для обведення
-  color: "#1976d2", // Синій текст
+  backgroundColor: "#0a0af2",
+  color: "#fff",
   "&:hover": {
-    // Стиль при наведенні
-    borderColor: "#1565c0",
-    backgroundColor: "rgba(21, 101, 192, 0.04)", // Легка підсвітка
+    backgroundColor: "#c62828",
   },
   padding: "8px 16px",
+  fontWeight: "bold",
 });
 
 const Modal = ({ open, onClose, onConfirm }) => {
@@ -62,10 +60,10 @@ const Modal = ({ open, onClose, onConfirm }) => {
         <p>Are you shure that you want to delete contact?</p>
       </DialogContent>
       <StyledDialogActions>
-        <StyledDeleteButton onClick={onClose} color="primary">
+        <StyledCancelButton onClick={onClose} color="primary">
           No
-        </StyledDeleteButton>
-        <StyledCancelButton
+        </StyledCancelButton>
+        <StyledDeleteButton
           onClick={() => {
             onConfirm();
             onClose();
@@ -74,7 +72,7 @@ const Modal = ({ open, onClose, onConfirm }) => {
           autoFocus
         >
           Yes
-        </StyledCancelButton>
+        </StyledDeleteButton>
       </StyledDialogActions>
     </StyledDialog>
   );

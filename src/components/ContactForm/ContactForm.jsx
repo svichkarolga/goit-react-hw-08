@@ -5,22 +5,24 @@ import { profileSchemas } from "../../utils/schemas.js";
 import { ErrorMessage } from "formik";
 import { useDispatch } from "react-redux";
 import { addContact } from "../../redux/contacts/operations.js";
+import toast, { Toaster } from "react-hot-toast";
 
 const ContactForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
-    // event.preventDefault();
     const newContact = {
       name: values.name,
       number: values.number,
     };
     dispatch(addContact(newContact));
+    toast.success("Successfully added!");
     actions.resetForm();
   };
 
   return (
     <div>
+      <Toaster position="top-center" reverseOrder={false} />
       <Formik
         initialValues={{
           name: "",

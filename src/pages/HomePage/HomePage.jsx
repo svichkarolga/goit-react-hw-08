@@ -6,7 +6,7 @@ const HomePage = () => {
     <div>
       <DocumentTitle>Home</DocumentTitle>
       <div>
-        <h1>Phone contacts - welcome page </h1>
+        <h1 style={{ color: "black" }}>Phone contacts - welcome page </h1>
       </div>
     </div>
   );

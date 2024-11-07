@@ -20,7 +20,9 @@ const ContactsPage = () => {
       <DocumentTitle>Your phonebook</DocumentTitle>
       <ContactForm />
       <SearchBox />
-      {isLoading && !error && <b>Request in progress...</b>}
+      {isLoading && !error && (
+        <b style={{ color: "black" }}>Request in progress...</b>
+      )}
       <ContactList />
     </div>
   );

@@ -5,6 +5,9 @@
   text-align: center;
 }
 
+body {
+  background: linear-gradient(rgb(244, 244, 192), rgb(197, 219, 131));
+}
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -40,4 +43,3 @@
 .read-the-docs {
   color: #888;
 }
-

@@ -11,10 +11,11 @@
   background-color: #edde0a;
 }
 .btn {
-  border-radius: 4px;
-  background-color: orangered;
+  border-radius: 6px;
+  background-color: rgb(237, 127, 88);
   color: black;
   border-color: black;
+  box-shadow: 2px 2px 2px red;
 }
 .text {
   margin: 0;

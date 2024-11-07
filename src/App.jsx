@@ -33,7 +33,7 @@ function App() {
   }, [dispatch]);
 
   return isRefreshing ? (
-    <div> Refreshing user...Please wait.. </div>
+    <div style={{ color: "black" }}> Refreshing user...Please wait.. </div>
   ) : (
     <div>
       <Layout>

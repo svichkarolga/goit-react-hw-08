@@ -57,11 +57,11 @@ const contactsSlice = createSlice({
         state.isLoading = false;
       })
       .addCase(updateContact.fulfilled, (state, action) => {
-        const index = state.findIndex(
+        const index = state.items.findIndex(
           (contact) => contact.id === action.payload.id
         );
         if (index !== -1) {
-          state[index] = action.payload;
+          state.items[index] = action.payload;
         }
       });
   },

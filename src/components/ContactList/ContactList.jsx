@@ -13,10 +13,8 @@ const ContactList = () => {
   const handleDeleteContact = (contactId) => {
     dispatch(deleteContact(contactId));
   };
-  const handleEditContact = (contactId, updatedData) => {
-    dispatch(updateContact({ contactId, updatedData })); // PATCH-запит на сервер
-    console.log(contactId);
-    console.log(updatedData);
+  const handleEditContact = (data) => {
+    dispatch(updateContact(data)); // PATCH-запит на сервер
   };
 
   return (

@@ -10,8 +10,6 @@ import toast, { Toaster } from "react-hot-toast";
 const Contact = ({ data: { id, name, number }, onDelete, onEdit }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-  const [editedName, setEditedName] = useState(name);
-  const [editedNumber, setEditedNumber] = useState(number);
 
   const handleDeleteClick = () => {
     setIsModalOpen(true);
@@ -27,10 +25,10 @@ const Contact = ({ data: { id, name, number }, onDelete, onEdit }) => {
     setIsEditModalOpen(true);
   };
 
-  const handleSaveEdit = () => {
+  const handleSaveEdit = (name, number) => {
     onEdit({
       contactId: id,
-      updatedData: { name: editedName, number: editedNumber },
+      updatedData: { name, number },
     });
     toast.success("Successfully edited!");
     setIsEditModalOpen(false);

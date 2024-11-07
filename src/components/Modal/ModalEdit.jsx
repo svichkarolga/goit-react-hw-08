@@ -49,8 +49,8 @@ const StyledSaveButton = styled(Button)({
   fontWeight: "bold",
 });
 const ModalEdit = ({ open, onClose, onSave, initialName, initialNumber }) => {
-  const [name, setName] = React.useState(initialName);
-  const [number, setNumber] = React.useState(initialNumber);
+  const [name, setName] = useState(initialName);
+  const [number, setNumber] = useState(initialNumber);
 
   useEffect(() => {
     setName(initialName);

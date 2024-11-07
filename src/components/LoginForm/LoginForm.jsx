@@ -41,7 +41,7 @@ export const LoginForm = () => {
       >
         <Form className={styles.form} autoComplete="off">
           <label className={styles.label}>Email</label>
-          <Field type="email" name="email" />
+          <Field className={styles.input} type="email" name="email" />
           <ErrorMessage
             className={styles.error}
             name="email"
@@ -49,7 +49,7 @@ export const LoginForm = () => {
           />
 
           <label className={styles.label}> Password</label>
-          <Field type="password" name="password" />
+          <Field className={styles.input} type="password" name="password" />
           <ErrorMessage
             className={styles.error}
             name="password"

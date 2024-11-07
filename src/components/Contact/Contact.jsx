@@ -46,11 +46,11 @@ const Contact = ({ data: { id, name, number }, onDelete, onEdit }) => {
         {number}
       </p>
       <div className={styles.btnBox}>
-        <button className={styles.btn} onClick={handleDeleteClick}>
-          Delete
-        </button>
         <button className={styles.btn} onClick={handleEditClick}>
           Edit
+        </button>
+        <button className={styles.btn} onClick={handleDeleteClick}>
+          Delete
         </button>
       </div>
 

@@ -28,7 +28,10 @@ const Contact = ({ data: { id, name, number }, onDelete, onEdit }) => {
   };
 
   const handleSaveEdit = () => {
-    onEdit(id, { name: editedName, number: editedNumber });
+    onEdit({
+      contactId: id,
+      updatedData: { name: editedName, number: editedNumber },
+    });
     toast.success("Successfully edited!");
     setIsEditModalOpen(false);
   };

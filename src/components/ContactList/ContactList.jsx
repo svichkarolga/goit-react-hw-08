@@ -14,7 +14,9 @@ const ContactList = () => {
     dispatch(deleteContact(contactId));
   };
   const handleEditContact = (contactId, updatedData) => {
-    dispatch(updateContact(contactId, updatedData)); // PATCH-запит на сервер
+    dispatch(updateContact({ contactId, updatedData })); // PATCH-запит на сервер
+    console.log(contactId);
+    console.log(updatedData);
   };
 
   return (

@@ -10,11 +10,11 @@ import { styled } from "@mui/material/styles";
 
 const StyledDialog = styled(Dialog)({
   "& .MuiPaper-root": {
-    backgroundColor: "#d8eb0c", // Колір фону
-    borderRadius: "10px", // Закруглені краї
-    padding: "20px", // Внутрішні відступи
-    width: "400px", // Ширина модального вікна
-    maxWidth: "100%", // Адаптивність
+    backgroundColor: "#d8eb0c",
+    borderRadius: "10px",
+    padding: "20px",
+    width: "400px",
+    maxWidth: "100%",
   },
 });
 const StyledDialogTitle = styled(DialogTitle)({
@@ -48,7 +48,7 @@ const StyledCancelButton = styled(Button)({
   fontWeight: "bold",
 });
 
-const Modal = ({ open, onClose, onConfirm }) => {
+const ModalDelete = ({ open, onClose, onConfirm }) => {
   return (
     <StyledDialog
       open={open}
@@ -78,4 +78,4 @@ const Modal = ({ open, onClose, onConfirm }) => {
   );
 };
 
-export default Modal;
+export default ModalDelete;

@@ -2,7 +2,7 @@ import React from "react";
 import Contact from "../Contact/Contact";
 import styles from "./ContactList.module.css";
 import { useSelector, useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contacts/operations";
+import { deleteContact, updateContact } from "../../redux/contacts/operations";
 import { selectFilteredContacts } from "../../redux/filters/selectors";
 
 const ContactList = () => {
@@ -13,6 +13,9 @@ const ContactList = () => {
   const handleDeleteContact = (contactId) => {
     dispatch(deleteContact(contactId));
   };
+  const handleEditContact = (contactId, updatedData) => {
+    dispatch(updateContact(contactId, updatedData)); // PATCH-запит на сервер
+  };
 
   return (
     <div className={styles.box}>
@@ -22,6 +25,7 @@ const ContactList = () => {
             <Contact
               data={contact}
               onDelete={() => handleDeleteContact(contact.id)}
+              onEdit={handleEditContact}
             />
           </li>
         ))}

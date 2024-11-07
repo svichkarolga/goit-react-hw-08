@@ -5,7 +5,7 @@
   gap: 6px;
   position: relative;
   border: 2px solid black;
-  width: 300px;
+  width: 350px;
   margin: 0;
   border-radius: 10px;
   background-color: #edde0a;
@@ -15,10 +15,6 @@
   background-color: orangered;
   color: black;
   border-color: black;
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
 }
 .text {
   margin: 0;
@@ -29,4 +25,13 @@
 }
 .icon {
   padding-right: 10px;
+}
+.btnBox {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  gap: 10px;
 }

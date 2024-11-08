@@ -8,6 +8,7 @@ import { RestrictedRoute } from "./components/RestrictedRoute";
 import { PrivateRoute } from "./components/PrivateRoute";
 import { refreshUser } from "./redux/auth/operations";
 import { selectIsLoggedIn, selectIsRefreshing } from "./redux/auth/selectors";
+import Loader from "./components/Loader/Loader";
 import "./App.css";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
@@ -33,7 +34,7 @@ function App() {
   }, [dispatch]);
 
   return isRefreshing ? (
-    <div style={{ color: "black" }}> Refreshing user...Please wait.. </div>
+    <Loader isLoading={isLoading} />
   ) : (
     <div>
       <Layout>

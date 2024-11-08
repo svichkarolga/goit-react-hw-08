@@ -8,12 +8,12 @@
   width: 350px;
   margin: 0;
   border-radius: 10px;
-  background-color: #edde0a;
+  background-color: #f7f1a1;
 }
 .btn {
   border-radius: 6px;
   background-color: rgb(237, 127, 88);
-  color: black;
+  color: white;
   border-color: black;
   box-shadow: 2px 2px 2px red;
 }
@@ -35,4 +35,22 @@
   right: 10px;
   transform: translateY(-50%);
   gap: 10px;
+}
+
+.textName {
+  margin: 0;
+  padding-top: 7px;
+  padding-left: 7px;
+  color: black;
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+.btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

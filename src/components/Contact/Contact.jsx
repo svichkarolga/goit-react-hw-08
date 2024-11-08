@@ -38,7 +38,7 @@ const Contact = ({ data: { id, name, number }, onDelete, onEdit }) => {
     <div className={styles.container}>
       <Toaster position="top-center" reverseOrder={false} />
 
-      <p className={styles.text}>
+      <p className={styles.textName}>
         <RiContactsFill className={styles.icon} />
         {name}
       </p>

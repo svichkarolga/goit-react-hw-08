@@ -10,7 +10,7 @@ import { styled } from "@mui/material/styles";
 
 const StyledDialog = styled(Dialog)({
   "& .MuiPaper-root": {
-    backgroundColor: "#d8eb0c",
+    backgroundColor: "#e9f288",
     borderRadius: "10px",
     padding: "20px",
     width: "400px",

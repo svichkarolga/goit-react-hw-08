@@ -6,7 +6,11 @@
 }
 
 body {
-  background: linear-gradient(rgb(244, 244, 192), rgb(197, 219, 131));
+  background-image: linear-gradient(
+    to bottom,
+    rgb(244, 244, 192),
+    rgb(197, 219, 131)
+  );
 }
 .logo {
   height: 6em;

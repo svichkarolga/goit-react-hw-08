@@ -1,12 +1,13 @@
 import React from "react";
 import DocumentTitle from "../../components/DocumentTitle";
+import styles from "./HomePage.module.css";
 
 const HomePage = () => {
   return (
     <div>
       <DocumentTitle>Home</DocumentTitle>
-      <div>
-        <h1 style={{ color: "black" }}>Phone contacts - welcome page </h1>
+      <div className={styles.container}>
+        <h1 className={styles.title}>Phone contacts </h1>
       </div>
     </div>
   );

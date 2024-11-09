@@ -29,10 +29,6 @@ function App() {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
-
   return isRefreshing ? (
     <Loader isLoading={isLoading} />
   ) : (

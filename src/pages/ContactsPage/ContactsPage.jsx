@@ -21,10 +21,7 @@ const ContactsPage = () => {
       <DocumentTitle>Your phonebook</DocumentTitle>
       <ContactForm />
       <SearchBox />
-      {isLoading && !error && (
-        <Loader isLoading={isLoading} />
-        // <b style={{ color: "black" }}>Request in progress...</b>
-      )}
+      {isLoading && !error && <Loader isLoading={isLoading} />}
       <ContactList />
     </div>
   );
